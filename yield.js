@@ -24,7 +24,7 @@ function gen() {
     let data2=(function(){return 'yield process2'})()
 }
 
-function koaConcurrent(generator) {
+function koaCoroutine(generator) {
     let gen=generator()
 
     function next(arg){
@@ -43,7 +43,7 @@ function koaConcurrent(generator) {
 
 let beg=(new Date()).getTime();
 for(i=0;i<10000;i++) {
-    koaConcurrent(genTemplate);
+    koaCoroutine(genTemplate);
 }
 console.log((new Date()).getTime()-beg)
 
